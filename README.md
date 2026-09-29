@@ -8,6 +8,14 @@
 
 ![앱 미리보기](docs/preview.png)
 
+## 다운로드
+
+**[Windows 설치 파일 다운로드](https://github.com/Junseo03L22/ameblo-studio/releases/download/v0.1.1/AmebloStudio-Setup-0.1.1-Windows-x64.exe)** · 약 360MB
+
+[다운로드 페이지와 버전 안내](https://github.com/Junseo03L22/ameblo-studio/releases/tag/v0.1.1)
+
+GitHub 계정 없이 다운로드할 수 있습니다. 초기 테스트 버전이며 실제 Ameblo 계정 업로드는 별도 검증이 필요합니다. 일반 사용자는 `Source code`가 아닌 `.exe` 설치 파일을 받으세요.
+
 ## Windows 사용자: 설치 후 아이콘으로 실행
 
 배포된 `AmebloStudio-Setup-0.1.1-Windows-x64.exe`를 더블클릭해 설치합니다.
