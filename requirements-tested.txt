@@ -1,0 +1,23 @@
+# macOS ARM64 / Python 3.12 검증 환경. 선택적 재현용 버전 목록
+altgraph==0.17.5
+filelock==4.0.4
+greenlet==3.5.6
+iniconfig==2.3.0
+macholib==1.16.4
+packaging==26.3
+pillow==12.3.0
+platformdirs==4.12.0
+playwright==1.63.0
+pluggy==1.6.0
+pyee==13.0.1
+Pygments==2.21.0
+pyinstaller==6.22.3
+pyinstaller-hooks-contrib==2026.7
+PySide6==6.11.2
+PySide6_Addons==6.11.2
+PySide6_Essentials==6.11.2
+pytest==9.1.1
+python-dotenv==1.2.3
+setuptools==84.0.0
+shiboken6==6.11.2
+typing_extensions==4.16.0

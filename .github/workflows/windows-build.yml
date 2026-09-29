@@ -1,0 +1,24 @@
+name: Windows desktop build
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: windows-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -e ".[dev]"
+      - run: python -m playwright install chromium
+      - run: python -m pytest -q
+        env:
+          QT_QPA_PLATFORM: offscreen
+      - run: python scripts/build.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: AmebloStudio-Windows
+          path: dist/
