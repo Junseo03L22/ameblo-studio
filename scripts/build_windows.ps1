@@ -8,3 +8,6 @@ if ($LASTEXITCODE -ne 0) { throw "의존성 설치 실패" }
 if ($LASTEXITCODE -ne 0) { throw "패키징 실패" }
 Compress-Archive -Path dist\AmebloStudio,dist\README.md,dist\LICENSE,dist\THIRD_PARTY.md -DestinationPath dist\AmebloStudio-Windows.zip -Force
 Write-Host "완료: dist\AmebloStudio-Windows.zip"
+
+& "$PSScriptRoot\installer_windows.ps1"
+if ($LASTEXITCODE -ne 0) { throw "Installer build failed" }

@@ -69,7 +69,7 @@ def test_settings_draft_roundtrip_and_key_precedence(draft, tmp_path, monkeypatc
     path = tmp_path / "draft.json"
     save_draft(path, draft)
     assert load_draft(path) == draft
-    assert "local-test-key" not in path.read_text()
+    assert "local-test-key" not in path.read_text(encoding="utf-8")
     with pytest.raises(ValueError):
         profile_dir("../../outside")
 
@@ -87,7 +87,7 @@ def test_browser_password_saving_disabled(tmp_path):
     path = tmp_path / 'Default' / 'Preferences'
     atomic_json(path, {'unrelated': {'keep': True}, 'profile': {'name': 'Local'}})
     disable_password_storage(tmp_path)
-    value = json.loads(path.read_text())
+    value = json.loads(path.read_text(encoding="utf-8"))
     assert value['unrelated']['keep'] is True
     assert value['profile']['name'] == 'Local'
     assert value['profile']['password_manager_enabled'] is False

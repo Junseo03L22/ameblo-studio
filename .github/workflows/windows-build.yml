@@ -6,7 +6,7 @@ permissions:
 jobs:
   build:
     runs-on: windows-latest
-    timeout-minutes: 30
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -18,7 +18,14 @@ jobs:
         env:
           QT_QPA_PLATFORM: offscreen
       - run: python scripts/build.py
+      - name: Compile installer
+        shell: pwsh
+        run: ./scripts/installer_windows.ps1
+      - name: Test installed app and shortcuts
+        shell: pwsh
+        run: ./scripts/smoke_windows.ps1
       - uses: actions/upload-artifact@v4
         with:
-          name: AmebloStudio-Windows
-          path: dist/
+          name: AmebloStudio-Windows-Installer
+          path: dist/installer/*.exe
+          if-no-files-found: error

@@ -8,7 +8,20 @@
 
 ![앱 미리보기](docs/preview.png)
 
-## 1. 빠른 시작
+## Windows 사용자: 설치 후 아이콘으로 실행
+
+배포된 `AmebloStudio-Setup-0.1.1-Windows-x64.exe`를 더블클릭해 설치합니다.
+설치 화면의 **Create a desktop shortcut**은 기본 선택되어 있습니다.
+설치 후 바탕화면 또는 시작 메뉴의 **Ameblo Studio**를 누르면 앱이 열립니다.
+Python 설치나 PowerShell 명령 입력이 필요하지 않습니다. 사용자 계정에 설치하므로 관리자 권한도 요구하지 않습니다.
+Windows 설정의 앱 목록에서 제거할 수 있으며, 기존 API 설정·로그인 세션은 앱 데이터 폴더에 유지됩니다.
+설치 프로그램은 아직 코드 서명되지 않았습니다. 실제 Ameblo 게시 호환성은 별도 검증 대상입니다.
+
+개발자는 Windows에서 Inno Setup 6을 설치하고 `scripts/build_windows.ps1`을 실행하면
+`dist/installer/`에 설치 파일이 생성됩니다. GitHub **Windows desktop build**도 설치 파일을 만들고,
+설치·바탕화면/시작 메뉴 바로가기·GUI 시작·제거를 테스트합니다.
+
+## 1. 빠른 시작 (개발자용)
 
 Python 3.12를 권장합니다. 프로젝트 ZIP을 풀고 **pyproject.toml이 있는 폴더**에서 실행합니다.
 
