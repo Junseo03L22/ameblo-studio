@@ -4,7 +4,7 @@
 
 한국어 화면에서 일본어 포스팅을 작성하고, 로그인한 Ameblo 브라우저에 제목·본문·이미지를 입력해 **임시저장**하는 독립 구현 Python 앱입니다. OpenAI/Gemini 선택, 고정 템플릿, 이미지 위치 지정, 로컬 초안 저장을 제공합니다.
 
-> **검증 범위:** GUI와 핵심 로직은 로컬 테스트를 통과했습니다. 실제 Ameblo 계정에서의 이미지 업로드·임시저장·공개 발행은 미검증입니다. 인증 전 글쓰기 주소는 현재 Ameba 로그인으로 이동하는 것을 확인했으나, 인증 후 DOM에는 접근하지 못했습니다. 이 환경에서 Chromium 실행도 macOS 샌드박스에 차단되었습니다. 선택자는 후보값이며 최초 사용 시 보정이 필요할 수 있습니다. 준비된 Windows exe가 아니라 **실행 가능한 소스와 exe 빌드 구성**을 제공합니다. 자세한 결과는 [TEST_REPORT.md](docs/TEST_REPORT.md)를 참조하세요.
+> **검증 범위:** Windows 설치 파일 생성, 설치, 바탕화면/시작 메뉴 바로가기, GUI 시작 및 제거 테스트를 통과했습니다. 전체 테스트 36개도 통과했습니다. 실제 Ameblo 계정의 이미지 업로드·임시저장·공개 발행은 여전히 미검증입니다. 인증 후 DOM 선택자는 첫 사용 시 보정이 필요할 수 있습니다. [검증된 설치 파일 빌드](https://github.com/Junseo03L22/ameblo-studio/actions/runs/36550966025) · [테스트 보고서](docs/TEST_REPORT.md)
 
 ![앱 미리보기](docs/preview.png)
 
@@ -153,9 +153,9 @@ diagnostics/        # 실패 단계 JSON, 가능한 경우 스크린샷
 powershell -File scripts\build_windows.ps1
 ```
 
-결과: `dist\AmebloStudio-Windows.zip`. 받는 사람은 ZIP을 풀고 `AmebloStudio\AmebloStudio.exe`를 실행합니다. **exe 파일만 떼어 공유하면 안 됩니다.** Qt와 Chromium이 들어 있는 전체 폴더가 필요하며 용량이 큽니다. 받는 사람은 Python 설치 없이 실행하도록 구성했습니다. 실제 Windows 빌드/실행 확인은 아직 하지 않았습니다.
+결과: `dist\AmebloStudio-Windows.zip`. 받는 사람은 ZIP을 풀고 `AmebloStudio\AmebloStudio.exe`를 실행합니다. **exe 파일만 떼어 공유하면 안 됩니다.** Qt와 Chromium이 들어 있는 전체 폴더가 필요하며 용량이 큽니다. 받는 사람은 Python 설치 없이 실행하도록 구성했습니다. Windows 빌드와 설치 후 GUI 시작은 GitHub Windows 실행 환경에서 검증했습니다. 실제 사용자 PC와 Ameblo 계정 검증은 별도입니다.
 
-GitHub 저장소에 이 프로젝트를 올린 뒤 Actions의 **Windows desktop build**를 수동 실행하는 구성도 포함했습니다. 워크플로를 이 작업에서 실행하거나 GitHub에 업로드하지는 않았습니다. 코드 서명은 별도이며 미서명 배포물에 OS 경고가 나타날 수 있습니다.
+GitHub 저장소에 이 프로젝트를 올린 뒤 Actions의 **Windows desktop build**를 수동 실행하는 구성도 포함했습니다. 워크플로 실행과 설치 파일 생성·설치 검증을 완료했습니다. 코드 서명은 별도이며 미서명 배포물에 OS 경고가 나타날 수 있습니다.
 
 macOS 빌드는 `sh scripts/build_macos.sh`를 사용합니다. 대상 아키텍처의 macOS에서 빌드하고 배포용 서명/공증은 별도로 처리하세요. 배포 전 의존성 고지는 [THIRD_PARTY.md](THIRD_PARTY.md)를 확인하세요.
 

@@ -74,3 +74,18 @@ TargetClosedError: BrowserType.launch
 ## 2026-09-29 GitHub 업로드 준비 점검
 
 브라우저 제외 테스트 재실행: **29 passed, 7 deselected**. 비밀 파일 제외 규칙, Windows/macOS 자동 테스트 워크플로, 개발 참여·보안 안내를 추가했습니다. 스테이징 대상에서 일반적인 API 키/토큰 패턴과 개인 절대 경로는 발견되지 않았습니다. 자동 검색은 비밀정보 부재를 완전히 보장하는 검사는 아닙니다. GitHub CI와 실제 계정 검증은 아직 실행하지 않았습니다.
+
+
+## Windows 설치 프로그램 0.1.1 검증 (2026-09-29)
+
+이 항목은 위 초기 보고서의 Windows 빌드/로컬 브라우저 미검증 상태를 갱신합니다.
+
+- GitHub Windows에서 전체 테스트 **36 passed**.
+- PyInstaller 실행파일 및 Inno Setup 설치 파일 생성 성공.
+- 테스트 계정에 무인 설치, 바탕화면과 시작 메뉴 바로가기 대상 확인 성공.
+- 설치된 exe가 실제 데스크톱 창을 여는지 확인 성공.
+- 제거 프로그램 실행 성공.
+- Windows/macOS Tests 워크플로 모두 성공.
+- 실제 Ameblo 계정 게시와 사용자 PC의 SmartScreen/서명 검증은 포함하지 않았습니다.
+
+검증 빌드: https://github.com/Junseo03L22/ameblo-studio/actions/runs/36550966025
